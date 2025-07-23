@@ -11,5 +11,9 @@ REPORT_GAS=true npx hardhat test
 npx hardhat node
 npx hardhat ignition deploy ./ignition/modules/Lock.ts
 
-sepolia contract address: 0xbD1a4eadabEcB523d2c25aF9edbB15aD2E5c18c8
+HARDHAT README:
+
+sepolia contract address: 0x1D4773c434913452E2e93E6E74ddD86C322D1F32
+
+Core contract address: 0x7c5888b16Ab78b35d8FB8d880C2999997d196f29
 ```

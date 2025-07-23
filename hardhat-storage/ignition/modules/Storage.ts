@@ -3,10 +3,10 @@
 
 import { buildModule } from "@nomicfoundation/hardhat-ignition/modules";
 
-const Coredao = buildModule("Coredao", (m) => {
-  const coredao = m.contract("Coredao");
+const StorageModule = buildModule("StorageModule", (m) => {
+  const storage = m.contract("Storage");
 
-  return { coredao };
+  return { storage };
 });
 
-export default Coredao;
+export default StorageModule;

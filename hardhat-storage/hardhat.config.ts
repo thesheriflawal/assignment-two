@@ -2,28 +2,24 @@ import { HardhatUserConfig } from "hardhat/config";
 import "@nomicfoundation/hardhat-toolbox";
 require("dotenv").config();
 
-const { PRIVATE_KEY, ETHERSCAN_KEY, SEPOLIA_URL_KEY, CORE_URL_KEY } =
-  process.env;
+const { PRIVATE_KEY, ETHERSCAN_API, SEPOLIA_RPC_URL, RPC_URL } = process.env;
 
 const config: HardhatUserConfig = {
-  solidity: "0.8.28",
+  solidity: "0.8.20",
   networks: {
     sepolia: {
-      url: SEPOLIA_URL_KEY,
+      url: SEPOLIA_RPC_URL,
       accounts: [`0x${PRIVATE_KEY}`],
     },
-    core: {
-      url: CORE_URL_KEY,
+    testnet: {
+      url: RPC_URL,
       accounts: [`0x${PRIVATE_KEY}`],
-      timeout: 120000, // 2 minutes
-      httpHeaders: {
-        Connection: "keep-alive",
-      },
+      gasPrice: 20000000000,
+      gas: 8000000,
     },
   },
   etherscan: {
-    apiKey: ETHERSCAN_KEY,
+    apiKey: ETHERSCAN_API,
   },
 };
-
 export default config;
